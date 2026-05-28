@@ -1,0 +1,104 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Large files
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+
+# Generated models and data
+generated_models/
+*.obj
+*.fbx
+*.ply
+*.stl
+
+# Datasets (large)
+data/ShapeNet/
+data/ModelNet/
+data/*.tar
+data/*.zip
+data/*.7z
+
+# Logs and outputs
+logs/
+runs/
+*.log
+checkpoints/
+*.onnx
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Blender temp files
+*.blend1
+*.blend2
+*.tmp
+*.bak
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Mac
+.DS_Store
+*.dylib
+
+# Windows
+*.exe
+*.dll

@@ -1,0 +1,62 @@
+{
+  "project": {
+    "name": "3DGAN_Project",
+    "description": "Generative Adversarial Network for 3D Model Generation",
+    "version": "1.0.0"
+  },
+  "data": {
+    "dataset_path": "./data",
+    "datasets": ["ShapeNet", "ModelNet"],
+    "num_points": 2048,
+    "batch_size": 32,
+    "num_workers": 4,
+    "train_split": 0.8,
+    "val_split": 0.1,
+    "test_split": 0.1
+  },
+  "model": {
+    "latent_dim": 256,
+    "num_points": 2048,
+    "generator": {
+      "layers": [256, 512, 1024, 2048],
+      "output_dim": 3
+    },
+    "discriminator": {
+      "layers": [128, 256, 512],
+      "dropout": 0.3,
+      "use_spectral_norm": true
+    }
+  },
+  "training": {
+    "epochs": 1000,
+    "learning_rate_g": 0.0002,
+    "learning_rate_d": 0.0002,
+    "beta1": 0.5,
+    "beta2": 0.999,
+    "device": "cuda",
+    "checkpoint_dir": "./checkpoints",
+    "log_dir": "./logs",
+    "save_interval": 50,
+    "use_wasserstein": true,
+    "gradient_penalty": true,
+    "lambda_gp": 10.0,
+    "gan_weight": 1.0,
+    "chamfer_weight": 2.0
+  },
+  "inference": {
+    "num_samples": 10,
+    "temperature": 0.8,
+    "device": "cuda"
+  },
+  "export": {
+    "export_format": ["obj", "fbx"],
+    "output_dir": "./generated_models",
+    "simplify_mesh": true,
+    "simplification_ratio": 0.5
+  },
+  "image_to_3d": {
+    "enabled": true,
+    "encoder_backbone": "resnet50",
+    "pretrained": true
+  }
+}
