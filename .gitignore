@@ -51,9 +51,8 @@ generated_models/
 *.ply
 *.stl
 
-# Datasets (large)
-data/ShapeNet/
-data/ModelNet/
+# Datasets - Keep only raw data, ignore massive files
+data/raw_*/
 data/*.tar
 data/*.zip
 data/*.7z
