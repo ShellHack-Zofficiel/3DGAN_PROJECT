@@ -1,0 +1,4 @@
+# Répertoire de données brutes ShapeNet
+# Téléchargez les fichiers .obj de ShapeNet depuis:
+# https://shapenet.org/ ou https://www.shapenetcore.org/
+# Structurez comme: raw_shapenet/02691156/1a0bc3d92903b6f9900fa0bfe957beca/model.obj
