@@ -4,14 +4,18 @@
 
 ```
 data/
-├── ShapeNet/              ← Nuages de points convertis (.npy) - UTILISER POUR L'ENTRAÎNEMENT
-│   ├── synthetic_0000.npy
-│   ├── synthetic_0001.npy
+├── ShapeNet/              ← Nuages de points convertis (.npy)
+│   ├── synthetic_0000.npy (✓ 200 fichiers synthétiques)
 │   └── ...
-├── raw_shapenet/          ← Fichiers .obj bruts (temporaire)
-│   └── [Télécharger et mettre les fichiers ShapeNet ici]
+├── raw_shapenet/          ← Fichiers .obj bruts ShapeNet
 ├── ModelNet/              ← Nuages de points ModelNet (.npy)
-└── raw_modelnet/          ← Fichiers .obj bruts ModelNet
+├── raw_modelnet/          ← Fichiers .obj bruts ModelNet
+├── HumanArt/              ← Modèles humains convertis (.npy)
+├── raw_human_art/         ← Fichiers bruts Human-Art
+├── WildScenes/            ← Scènes naturelles converties (.npy)
+├── raw_wildscenes/        ← Fichiers bruts WildScenes
+├── Orbis/                 ← Scans haute résolution (.npy)
+└── raw_orbis/             ← Fichiers bruts Orbis
 ```
 
 ## Option 1: Données synthétiques (DÉJÀ FAITES)
@@ -67,6 +71,48 @@ python data/convert_modelnet.py \
   --output-dir data/ModelNet
 ```
 
+## Option 4: Télécharger Human-Art
+
+### Accéder au dataset
+1. Aller sur https://github.com/CPJKU/human-art-dataset
+2. Télécharger le dataset
+3. Extraire dans `data/raw_human_art/`
+
+### Convertir au format NPY
+```bash
+python data/convert_human_art.py \
+  --raw-dir data/raw_human_art \
+  --output-dir data/HumanArt
+```
+
+## Option 5: Télécharger WildScenes
+
+### Accéder au dataset
+1. Aller sur https://github.com/weiyithu/wildscenes
+2. Télécharger les fichiers 3D
+3. Extraire dans `data/raw_wildscenes/`
+
+### Convertir au format NPY
+```bash
+python data/convert_wildscenes.py \
+  --raw-dir data/raw_wildscenes \
+  --output-dir data/WildScenes
+```
+
+## Option 6: Télécharger Orbis
+
+### Accéder au dataset
+1. Aller sur https://github.com/mkazhdan/Orbis
+2. Télécharger les scans haute résolution
+3. Extraire dans `data/raw_orbis/`
+
+### Convertir au format NPY
+```bash
+python data/convert_orbis.py \
+  --raw-dir data/raw_orbis \
+  --output-dir data/Orbis
+```
+
 ## Vérifier les données
 
 ### Compter les fichiers
@@ -110,6 +156,9 @@ loader = DataLoader(dataset, batch_size=32, shuffle=True)
 
 - ✅ Les données synthétiques (200 files) sont prêtes pour la démo
 - 📊 Pour un entraînement réel, télécharger ShapeNet (~55GB) ou ModelNet (~1.6GB)
+- 👥 Human-Art: Modèles d'humains dans différentes poses
+- 🌲 WildScenes: Scènes naturelles et environnements
+- 🔍 Orbis: Scans 3D haute résolution (recommandé pour qualité supérieure)
 - 🔄 `raw_*/` = fichiers temporaires (peuvent être supprimés après conversion)
 - 💾 `*/` = données finales (utilisées par l'entraînement)
 - 🎲 Les nuages de points sont normalisés dans [-1, 1]
