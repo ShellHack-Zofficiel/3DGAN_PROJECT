@@ -1,0 +1,3 @@
+# Répertoire de données d'entraînement
+# Stocker les fichiers de nuages de points .npy ou .pt ici (format: N x 3 arrays)
+# Exemples: synthetic_0001.npy, modelnet_chair.pt, shapenet_lamp.pt
